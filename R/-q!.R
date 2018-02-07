@@ -1,2 +1,0 @@
-YEAR: 2018
-COPYRIGHT HOLDER: Francisco J. Farach Jr.
