@@ -8,8 +8,14 @@ BugReports: https://github.com/frankfarach/frankr/issues
 Description: Commonly used functions packaged for convenient access.
 Depends: R (>= 3.4)
 Imports: 
-  assertr,
-  tidyverse
+    assertr,
+    tidyverse,
+    attempt,
+    glue,
+    desc,
+    purrr,
+    usethis,
+    utils
 Suggests:
   testthat
 License: MIT + file LICENSE
