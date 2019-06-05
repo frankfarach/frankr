@@ -74,3 +74,23 @@ do_fun_wait <- function(.f, n_tries, sleep_for = 1L, ...){
 
   return(result)
 }
+
+
+#' Extract list column by key
+#'
+#' @param df data frame
+#' @param list_col list column in \code{df}
+#' @param key key column in \code{df}
+#' @return data frame with \code{key} and unnested \code{list_col}
+get_list_col <- function(df, list_col, key) {
+
+  if (!is.data.frame(df))
+    stop("`df` must be a data frame")
+
+  list_col <- dplyr::enquo(list_col)
+  key <- dplyr::enquo(key)
+
+  df %>%
+    dplyr::select(!!key, !!list_col) %>%
+    tidyr::unnest(!!list_col)
+}
